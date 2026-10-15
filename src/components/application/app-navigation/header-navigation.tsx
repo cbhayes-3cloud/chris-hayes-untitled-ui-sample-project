@@ -42,6 +42,8 @@ interface HeaderNavigationBaseProps {
     items: NavItem[];
     /** List of sub-items to display. */
     subItems?: NavItem[];
+    /** Optional brand mark to replace the default logo. */
+    logo?: ReactNode;
     /** Whether to hide the bottom border. */
     hideBorder?: boolean;
 
@@ -96,11 +98,13 @@ export const HeaderNavigationBase = ({
     activeUrl,
     items,
     subItems,
+    logo,
     hideBorder = false,
     actions,
     centered = false,
     secondaryType = "buttons",
 }: HeaderNavigationBaseProps) => {
+    const brandLogo = logo ?? <UntitledLogo className="h-6" />;
     const isActive = (item: NavItem) => item.current ?? isItemActive(item.href, activeUrl);
 
     const activeParent = items.find((item) => isActive(item) || item.items?.some((sub) => isItemActive(sub.href, activeUrl)));
@@ -124,7 +128,7 @@ export const HeaderNavigationBase = ({
             <MobileNavigationHeader>
                 <aside className="flex h-full max-w-full flex-col justify-between overflow-auto bg-primary pt-4">
                     <div className="flex flex-col gap-5 px-4">
-                        <UntitledLogo className="h-6" />
+                        {brandLogo}
 
                         <Input size="md" aria-label="Search" placeholder="Search" icon={SearchLg} />
                     </div>
@@ -169,7 +173,7 @@ export const HeaderNavigationBase = ({
                                 href="/"
                                 className="rounded-xs outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2"
                             >
-                                <UntitledLogo className="h-6" />
+                                {brandLogo}
                             </a>
                         </div>
 
