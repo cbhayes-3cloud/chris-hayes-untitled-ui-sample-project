@@ -1,56 +1,66 @@
-# Untitled UI starter kit for Vite
+# Financial Palooza
 
-This is an official Untitled UI starter kit for Vite. Kickstart your Untitled UI project with Vite in seconds.
+Financial Palooza is a responsive trade-history dashboard built with React and the Untitled UI component library. It presents a sample trading account in a compact workspace for reviewing trade activity and account performance.
 
-## Untitled UI React
+## Features
 
-[Untitled UI React](https://www.untitledui.com/react) is the world’s largest collection of open-source React UI components. Everything you need to design and develop modern, beautiful interfaces—fast.
+- Trade table with ticker, company, order amount, trade type, date, status, and trader details
+- Search by ticker, company, or trader
+- Filter trades by date range and status
+- Select trades and download the selection as a CSV file
+- Paginated results and account performance summaries
+- Accessible interactions built on React Aria Components
 
-Built with React 19.3, Tailwind CSS v4.3, TypeScript 6.0, and React Aria, Untitled UI React components deliver modern performance, type safety, and maintainability.
+## Demo data
 
-[Learn more](https://www.untitledui.com/react) • [Documentation](https://www.untitledui.com/react/docs/introduction) • [Figma](https://www.untitledui.com/figma) • [FAQs](https://www.untitledui.com/faqs)
+This is a front-end demo; it does not connect to a trading service or backend. The trade rows and performance figures are sample data defined in `src/pages/home-screen.tsx`. Some summary values are illustrative and should not be treated as live account information.
 
-## Getting started
+## Run locally
 
-First, run the development server:
+You’ll need Node.js 20.19+ or 22.12+, plus npm.
 
 ```bash
+git clone https://github.com/cbhayes-3cloud/chris-hayes-untitled-ui-sample-project.git
+cd chris-hayes-untitled-ui-sample-project
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) with your browser to see the result.
+Open [http://localhost:5173](http://localhost:5173) in your browser. Vite serves the app locally and reloads the page as you edit the source.
 
-You can start editing the app by modifying the components in `src/` folder. The page auto-updates as you edit the file.
+To create a production build, run:
 
-## Resources
+```bash
+npm run build
+```
 
-Untitled UI React is built on top of [Untitled UI Figma](https://www.untitledui.com/figma), the world's largest and most popular Figma UI kit and design system. Explore more:
+To preview that build locally, run `npm run preview` after building.
 
-**[Untitled UI Figma:](https://www.untitledui.com/react/resources/figma-files)** The world's largest Figma UI kit and design system.
-<br/>
-**[Untitled UI Icons:](https://www.untitledui.com/react/resources/icons)** A clean, consistent, and neutral icon library crafted specifically for modern UI design.
-<br/>
-**[Untitled UI file icons:](https://www.untitledui.com/react/resources/file-icons)** Free file format icons, designed specifically for modern web and UI design.
-<br/>
-**[Untitled UI flag icons:](https://www.untitledui.com/react/resources/flag-icons)** Free country flag icons, designed specifically for modern web and UI design.
-<br/>
-**[Untitled UI avatars:](https://www.untitledui.com/react/resources/avatars)** Free placeholder user avatars and profile pictures to use in your projects.
-<br/>
-**[Untitled UI logos:](https://www.untitledui.com/react/resources/logos)** Free fictional company logos to use in your projects.
+## Project structure
 
-## License
+```text
+src/
+	components/
+		application/   Composed interface patterns such as tables, navigation, and date pickers
+		base/          Reusable controls such as buttons, inputs, badges, and dropdowns
+		foundations/   Shared visual foundations and icons
+		marketing/     Marketing-oriented components
+		shared-assets/ Illustrations, patterns, and other reusable assets
+	hooks/           Reusable React hooks
+	pages/           Route-level screens, including the trade dashboard
+	providers/       Theme and router context
+	styles/          Global styles, theme tokens, and typography
+	types/           Shared TypeScript declarations
+	utils/           Shared utility functions
+	main.tsx         React app entry point and route setup
+```
 
-Untitled UI React open-source components are licensed under the MIT license, which means you can use them for free in unlimited commercial projects.
+## Scripts
 
-> [!NOTE]
-> This license applies only to the starter kit and to the components included in this open-source repository. [Untitled UI React PRO](https://www.untitledui.com/react) includes hundreds more advanced UI components and page examples and is subject to a separate [license agreement](https://www.untitledui.com/license).
+- `npm run dev` starts the Vite development server.
+- `npm run build` runs the TypeScript project build and creates production assets in `dist/`.
+- `npm run preview` serves the production build locally.
 
-[Untitled UI license agreement →](https://www.untitledui.com/license)
+## Built with
 
-[Frequently asked questions →](https://www.untitledui.com/faqs)
+React 19, TypeScript, Vite, Tailwind CSS 4, React Aria Components, and Untitled UI icons and components.
